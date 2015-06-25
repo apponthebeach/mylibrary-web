@@ -1,7 +1,7 @@
 #My Library
 
-Contributors: Ludovic Roland ([http://www.rolandl.fr](http://www.rolandl.fr))<br/>
-Stable tag: 1.4.2.1<br/>
+Contributors: Ludovic Roland ([http://www.rolandl.fr](http://www.rolandl.fr)), Axel de Sainte Marie ([http://www.apponthebeach.com](http://www.apponthebeach.com))<br/>
+Stable tag: 1.4.3<br/>
 License: GNU GPL v2.0<br/>
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,6 +48,13 @@ In order to work, your domain name has to target the directory 'Web'.
 Users have to be add directly in the database. Passwords have to be encrypted with SHA1.
 
 ##Changelog
+
+###1.4.3
+
+* New entry "All" in the books list, to see all the books recorded at one place
+* Added a new book directly from the detail view of another one
+* View the lists (Want, Read, Get) of all the users of the library
+* Added a new entry in the books list : Book you didn't read yet
 
 ###1.4.2.1
 * Fixed syntax error

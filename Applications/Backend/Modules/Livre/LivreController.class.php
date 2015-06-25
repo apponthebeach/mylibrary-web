@@ -239,6 +239,15 @@
       $this->page->addVar('livresList', $livresList);
     }
     
+    public function executeToRead(\Library\HTTPRequest $request) 
+    {
+      $utilisateurId = $request->getData('utilisateurId');
+      $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
+      $livresList = $this->managers->getManagerOf('Livre')->getToReadList($utilisateurId);
+      $this->page->addVar('utilisateur', $utilisateur);
+      $this->page->addVar('livresList', $livresList);
+    }
+    
     public function executeWant(\Library\HTTPRequest $request) 
     {
       $utilisateurId = $request->getData('utilisateurId');
@@ -250,19 +259,37 @@
     
     public function executeGetexport(\Library\HTTPRequest $request) 
     {
-      $livresList = $this->managers->getManagerOf('Livre')->getGetList($this->app->user()->getAttribute('id'));
+      $utilisateurId = $request->getData('utilisateurId');
+      $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
+      $livresList = $this->managers->getManagerOf('Livre')->getGetList($utilisateurId);
+      $this->page->addVar('utilisateur', $utilisateur);
       $this->page->addVar('livresList', $livresList);
     }
     
     public function executeReadexport(\Library\HTTPRequest $request) 
     {
-      $livresList = $this->managers->getManagerOf('Livre')->getReadList($this->app->user()->getAttribute('id'));
+      $utilisateurId = $request->getData('utilisateurId');
+      $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
+      $livresList = $this->managers->getManagerOf('Livre')->getReadList($utilisateurId);
+      $this->page->addVar('utilisateur', $utilisateur);
+      $this->page->addVar('livresList', $livresList);
+    }
+    
+    public function executeToReadexport(\Library\HTTPRequest $request) 
+    {
+      $utilisateurId = $request->getData('utilisateurId');
+      $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
+      $livresList = $this->managers->getManagerOf('Livre')->getToReadList($utilisateurId);
+      $this->page->addVar('utilisateur', $utilisateur);
       $this->page->addVar('livresList', $livresList);
     }
     
     public function executeWantexport(\Library\HTTPRequest $request)
     {
-      $livresList = $this->managers->getManagerOf('Livre')->getWantList($this->app->user()->getAttribute('id'));
+      $utilisateurId = $request->getData('utilisateurId');
+      $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
+      $livresList = $this->managers->getManagerOf('Livre')->getWantList($utilisateurId);
+      $this->page->addVar('utilisateur', $utilisateur);
       $this->page->addVar('livresList', $livresList);
     }
     
