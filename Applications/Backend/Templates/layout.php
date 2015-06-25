@@ -34,8 +34,8 @@
 						<ul class="nav navbar-nav">
 							<li><a href="/genres.html">Les genres</a></li>
 							<li><a href="/auteurs.html">Les auteurs</a></li>
-							<li><a href="/livres-a.html">Les livres</a></li>
-							<li><a href="/listes.html">Mes listes</a></li>
+							<li><a href="/livres.html">Les livres</a></li>
+							<li><a href="/listes.html">Les listes</a></li>
 							<li><a href="/recherche.html"><span class="glyphicon glyphicon-search"></span></a></li>
               <li><a href="/livres-export-all.html" target="_blank"><span class="glyphicon glyphicon-download-alt"></span></a></li>
 						</ul>
@@ -64,6 +64,7 @@
 		<div class="footer">
 			<div class="container">
 				<p>v 1.4.2.1&nbsp;-&nbsp;Site réalisé par <a href="http://www.rolandl.fr" target="_blank">Ludovic ROLAND</a>&nbsp;-&nbsp;Design par <a href="http://bootswatch.com/" target="_blank">Bootswatch</a></p>
+				<p>(Avec quelques améliorations d'<a href="http://www.apponthebeach.com" target="_blank">Axel de SAINTE MARIE</a></p>
 			</div>
 		</div>
 	</body>

@@ -7,6 +7,8 @@
       
     public function executeIndex(\Library\HTTPRequest $request)
     {
+    	$utilisateursList = $this->managers->getManagerOf('Utilisateur')->getUtilisateurList();
+      	$this->page->addVar('utilisateursList', $utilisateursList);
     }
     
   }

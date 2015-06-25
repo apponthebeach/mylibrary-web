@@ -55,7 +55,7 @@
       if($this->managers->getManagerOf('Livre')->delete($request->getData('id'))) 
       {
         $this->app->user()->setFlash(utf8_encode('Livre supprimé avec succès.'));
-        $this->app->httpResponse()->redirect('/livres-a.html');
+        $this->app->httpResponse()->redirect('/livres.html');
       }
       else 
       {
@@ -223,19 +223,28 @@
     
     public function executeGet(\Library\HTTPRequest $request) 
     {
-      $livresList = $this->managers->getManagerOf('Livre')->getGetList($this->app->user()->getAttribute('id'));
+      $utilisateurId = $request->getData('utilisateurId');
+      $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
+      $livresList = $this->managers->getManagerOf('Livre')->getGetList($utilisateurId);
+      $this->page->addVar('utilisateur', $utilisateur);
       $this->page->addVar('livresList', $livresList);
     }
     
     public function executeRead(\Library\HTTPRequest $request) 
     {
-      $livresList = $this->managers->getManagerOf('Livre')->getReadList($this->app->user()->getAttribute('id'));
+      $utilisateurId = $request->getData('utilisateurId');
+      $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
+      $livresList = $this->managers->getManagerOf('Livre')->getReadList($utilisateurId);
+      $this->page->addVar('utilisateur', $utilisateur);
       $this->page->addVar('livresList', $livresList);
     }
     
     public function executeWant(\Library\HTTPRequest $request) 
     {
-      $livresList = $this->managers->getManagerOf('Livre')->getWantList($this->app->user()->getAttribute('id'));
+      $utilisateurId = $request->getData('utilisateurId');
+      $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
+      $livresList = $this->managers->getManagerOf('Livre')->getWantList($utilisateurId);
+      $this->page->addVar('utilisateur', $utilisateur);
       $this->page->addVar('livresList', $livresList);
     }
     

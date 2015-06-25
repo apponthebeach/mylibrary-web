@@ -23,7 +23,7 @@
 	<route url="/auteur-edit-([0-9]+).html" module="Auteur" action="edit" vars="id" />
 	
 	<!-- Livre -->
-	<route url="/livres.html" module="Livre" action="index" />
+    <route url="/livres.html" module="Livre" action="index" />
 	<route url="/livres-([a-z]).html" module="Livre" action="index" vars="letter" />
 	<route url="/livre-new.html" module="Livre" action="new" />
 	<route url="/livre-delete-([0-9]+).html" module="Livre" action="delete" vars="id" />
@@ -35,16 +35,17 @@
 	<route url="/livre-read-remove-([0-9]+).html" module="Livre" action="readremove" vars="id" />
 	<route url="/livre-want-([0-9]+).html" module="Livre" action="wantadd" vars="id" />
 	<route url="/livre-want-remove-([0-9]+).html" module="Livre" action="wantremove" vars="id" />
-	<route url="/livres-get.html" module="Livre" action="get" />
-	<route url="/livres-want.html" module="Livre" action="want" />
-	<route url="/livres-read.html" module="Livre" action="read" />
+	<route url="/livres-get-([0-9]+).html" module="Livre" action="get" vars="utilisateurId" />
+	<route url="/livres-want-([0-9]+).html" module="Livre" action="want" vars="utilisateurId" />
+	<route url="/livres-read-([0-9]+).html" module="Livre" action="read" vars="utilisateurId" />
 	<route url="/livres-get-export.html" module="Livre" action="getexport" loadTemplate="false" />
 	<route url="/livres-want-export.html" module="Livre" action="wantexport" loadTemplate="false" />
 	<route url="/livres-read-export.html" module="Livre" action="readexport" loadTemplate="false" />
   <route url="/livres-export-all.html" module="Livre" action="allexport" loadTemplate="false" />
   
   <!-- Liste -->
-  <route url="/listes.html" module="Liste" action="index" />
+  <route url="/listes.html" module="Liste" action="index" vars="utilisateurId" />
+  <route url="/listes-([0-9]+).html" module="Liste" action="index" vars="utilisateurId" />
 	
 	<!-- Recherche -->
 	<route url="/recherche.html" module="Recherche" action="index" />
