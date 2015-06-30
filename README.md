@@ -1,7 +1,7 @@
 #My Library
 
 Contributors: Ludovic Roland ([http://www.rolandl.fr](http://www.rolandl.fr)), Axel de Sainte Marie ([http://www.apponthebeach.com](http://www.apponthebeach.com))<br/>
-Stable tag: 1.4.3<br/>
+Stable tag: 1.4.3.1<br/>
 License: GNU GPL v2.0<br/>
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -48,6 +48,13 @@ In order to work, your domain name has to target the directory 'Web'.
 Users have to be add directly in the database. Passwords have to be encrypted with SHA1.
 
 ##Changelog
+
+###1.4.3.1
+WARNING : If you already have My Library set up on your serveur, you MUST update your database for this version to work. Check Documents/sql/my_library_1.4.3.1.sql to see the updates
+
+* Add a button to add a new book directly from the home page
+* Bug fixed on the link to go back to the books list from a book details page when the bool title start with a number
+* Update the book table to add a flag in order to specify if a book is an eBook or a real one - Update to version 1.4.3.1
 
 ###1.4.3
 
