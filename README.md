@@ -50,7 +50,7 @@ Users have to be add directly in the database. Passwords have to be encrypted wi
 ##Changelog
 
 ###1.4.3.1
-WARNING : If you already have My Library set up on your serveur, you MUST update your database for this version to work. Check Documents/sql/my_library_1.4.3.1.sql to see the updates
+WARNING : If you already have My Library set up on your server, you MUST update your database for this version to work. Check Documents/sql/my_library_1.4.3.1.sql to see the updates
 
 * Add a button to add a new book directly from the home page
 * Bug fixed on the link to go back to the books list from a book details page when the bool title start with a number
