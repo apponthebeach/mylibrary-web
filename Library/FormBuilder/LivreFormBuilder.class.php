@@ -53,6 +53,10 @@
         'label' => 'Poche',
         'name'  => 'poche'
       )))
+      ->add(new \Library\CheckBoxField(array(
+        'label' => 'eBook',
+        'name'  => 'ebook'
+      )))
       ->add(new \Library\HiddenField(array(
         'name' => 'id',
       )));

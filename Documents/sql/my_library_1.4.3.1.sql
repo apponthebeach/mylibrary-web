@@ -52,6 +52,7 @@ CREATE TABLE IF NOT EXISTS `LIVRE` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+ALTER TABLE `LIVRE` ADD `LIV_NUM` TINYINT(1) NOT NULL COMMENT '';
 
 -- -----------------------------------------------------
 -- Table `UTILISATEUR`

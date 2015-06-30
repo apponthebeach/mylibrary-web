@@ -18,6 +18,7 @@
       if($request->method() == 'POST') 
       {				
         $poche = (($request->postData('poche') == 'on') ? 1 : 0);
+        $ebook = (($request->postData('ebook') == 'on') ? 1 : 0);
         $livre = new \Library\Entities\Livre(array(
           'id'			    => $request->postData('id'),
           'nom' 			  => $request->postData('nom'),
@@ -25,7 +26,8 @@
           'couverture' 	=> $_FILES['couverture']['tmp_name'],
           'genreId' 		=> $request->postData('genreId'),
           'auteurId' 		=> $request->postData('auteurId'),
-          'poche' 		  => $poche
+          'poche' 		  => $poche,
+          'ebook' 		  => $ebook
         ));
       }
       else
@@ -99,6 +101,7 @@
       if($request->method() == 'POST') 
       {				
         $poche = (($request->postData('poche') == 'on') ? 1 : 0);
+        $ebook = (($request->postData('ebook') == 'on') ? 1 : 0);
         $livre = new \Library\Entities\Livre(array(
           'id'			=> $request->postData('id'),
           'nom' 			=> $request->postData('nom'),
@@ -106,7 +109,8 @@
           'couverture' 	=> $_FILES['couverture']['tmp_name'],
           'genreId' 		=> $request->postData('genreId'),
           'auteurId' 		=> $request->postData('auteurId'),
-          'poche' 		=> $poche
+          'poche' 		=> $poche,
+          'ebook' 		=> $ebook
         ));
       }
       else
@@ -230,6 +234,15 @@
       $this->page->addVar('livresList', $livresList);
     }
     
+    public function executeGetexport(\Library\HTTPRequest $request) 
+    {
+      $utilisateurId = $request->getData('utilisateurId');
+      $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
+      $livresList = $this->managers->getManagerOf('Livre')->getGetList($utilisateurId);
+      $this->page->addVar('utilisateur', $utilisateur);
+      $this->page->addVar('livresList', $livresList);
+    }
+    
     public function executeRead(\Library\HTTPRequest $request) 
     {
       $utilisateurId = $request->getData('utilisateurId');
@@ -253,15 +266,6 @@
       $utilisateurId = $request->getData('utilisateurId');
       $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
       $livresList = $this->managers->getManagerOf('Livre')->getWantList($utilisateurId);
-      $this->page->addVar('utilisateur', $utilisateur);
-      $this->page->addVar('livresList', $livresList);
-    }
-    
-    public function executeGetexport(\Library\HTTPRequest $request) 
-    {
-      $utilisateurId = $request->getData('utilisateurId');
-      $utilisateur = $this->managers->getManagerOf('Utilisateur')->getUtilisateurById($utilisateurId);
-      $livresList = $this->managers->getManagerOf('Livre')->getGetList($utilisateurId);
       $this->page->addVar('utilisateur', $utilisateur);
       $this->page->addVar('livresList', $livresList);
     }
