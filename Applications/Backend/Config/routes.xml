@@ -24,6 +24,7 @@
 	
 	<!-- Livre -->
     <route url="/livres.html" module="Livre" action="index" />
+    <route url="/livres-([0-9]).html" module="Livre" action="index" />
 	<route url="/livres-([a-z]).html" module="Livre" action="index" vars="letter" />
 	<route url="/livre-new.html" module="Livre" action="new" />
 	<route url="/livre-delete-([0-9]+).html" module="Livre" action="delete" vars="id" />
